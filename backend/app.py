@@ -155,7 +155,7 @@ def get_file(file_name):
 def health_check():
     return jsonify({
         "status": "healthy",
-        "timestamp": datetime.datetime.now().isoformat()
+        "timestamp": datetime.now(timezone.utc).isoformat() + "Z"
     }), 200
 
 
