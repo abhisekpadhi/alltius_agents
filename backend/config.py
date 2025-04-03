@@ -20,8 +20,6 @@ config = {
     "qdrant_api_key": os.getenv("QDRANT_API_KEY")
 }
 
-print(config)
-
 COLLECTION_NAME_INSURANCE = "alltius_rag_chunks_insurance"
 COLLECTION_NAME_ANGELONE = "alltius_rag_chunks_angelone"
 VOYAGE_MODEL = "voyage-3"
@@ -43,6 +41,3 @@ openai = openai.AzureOpenAI(
   azure_endpoint = config["openai_azure_endpoint"],
   azure_deployment= config["openai_azure_deployment"]
 )
-
-# create collection if it doesn't exist
-print("collections", collections)
