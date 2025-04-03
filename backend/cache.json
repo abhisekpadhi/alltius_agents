@@ -1,0 +1,25 @@
+{
+  "test-key": {
+    "answer": "test-answer",
+    "context": "test-context",
+    "sources": "test-sources"
+  },
+  "alltius_rag_chunks_insurance:i had a surgery last year, which plan am I eligible for?": {
+    "answer": "Based on the provided context, if you had a surgery last year and are currently being treated for the condition for which you had the surgery, you will not be eligible for any of the America\u2019s Choice Plans. This includes America\u2019s Choice 2500 Gold, America\u2019s Choice 5000 HSA, America\u2019s Choice 250, America\u2019s Choice 500, America\u2019s Choice 7350 Copper, America\u2019s Choice 5000 Bronze, BCBS 1500, BCBS 2500, BCBS 5000, BCBS 7350, PMS Gigcare 1500, PMS Gigcare 2500, PMS Gigcare 5000, PMS Gigcare 7350, and PMS Gigcare 5000 HSA.",
+    "sources": [
+      "/file/America%27s_Choice_Medical_Questions_-_Modified_%283%29%20%281%29.pdf?bucket=Insurance%20PDFs"
+    ]
+  },
+  "alltius_rag_chunks_angelone:Is there a limit on the amount of funds that I can add to my Angel One account?": {
+    "answer": "Yes, there is a limit on the amount of funds that you can add to your Angel One account. The limit for fund addition via UPI is 1 lakh per day. For net banking, the limit will be applicable as per the bank account.",
+    "sources": [
+      "https://www.angelone.in/support/add-and-withdraw-funds/add-funds"
+    ]
+  },
+  "alltius_rag_chunks_insurance: had a surgery last year, which plan am I eligible for?": {
+    "answer": "Based on the provided context, if you had a surgery last year, you will not be eligible for any of the America\u2019s Choice Plans, which include:\n\n- America\u2019s Choice 2500 Gold\n- America\u2019s Choice 5000 HSA\n- America\u2019s Choice 250\n- America\u2019s Choice 500\n- America\u2019s Choice 7350 Copper\n- America\u2019s Choice 5000 Bronze\n- BCBS 1500\n- BCBS 2500\n- BCBS 5000\n- BCBS 7350\n- PMS Gigcare 1500\n- PMS Gigcare 2500\n- PMS Gigcare 5000\n- PMS Gigcare 7350\n- PMS Gigcare 5000 HSA\n\nYou would need to look for alternative health insurance plans that do not have these specific restrictions.",
+    "sources": [
+      "/file/America%27s_Choice_Medical_Questions_-_Modified_%283%29%20%281%29.pdf?bucket=Insurance%20PDFs"
+    ]
+  }
+}

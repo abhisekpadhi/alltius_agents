@@ -1,0 +1,9 @@
+flask
+qdrant-client
+openai
+voyageai
+pdfplumber
+requests
+bs4
+flask_cors
+python-dotenv
