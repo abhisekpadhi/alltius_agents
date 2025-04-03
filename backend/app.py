@@ -149,6 +149,15 @@ def get_file(file_name):
         )
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+@app.route("/health")
+def health_check():
+    return jsonify({
+        "status": "healthy",
+        "timestamp": datetime.datetime.now().isoformat()
+    }), 200
+
 
 
 if __name__ == "__main__":
