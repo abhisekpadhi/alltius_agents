@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from config import qdrant, voyage, VOYAGE_MODEL, openai
+from config import qdrant, voyage, VOYAGE_MODEL, openai, OUT_OF_CONTEXT_RESPONSE
 from datetime import datetime, timezone
 import json
 from lib.logging import log
@@ -35,6 +35,10 @@ def search_chunks(query, collection_name, min_results):
 def generate_answer(context_chunks, question):
     context = "\n\n".join(context_chunks)
     prompt = f"""You are an assistant helping answer questions from documents.
+- If no relevant information exists, respond with exactly: {OUT_OF_CONTEXT_RESPONSE}
+- Response should be direct and fact-based
+- Use short, clear sentences
+- Focus exclusively on the asked question
 
 Context:
 {context}
@@ -111,13 +115,17 @@ def chat():
     
     sources_cleaned = []
 
-    if collection_name == "alltius_rag_chunks_insurance":
-        sources_cleaned = [
-            f"/file/{urllib.parse.quote(source)}?bucket={urllib.parse.quote(bucket)}"
-            for source in sources
-        ]
-    if collection_name == "alltius_rag_chunks_angelone":
-        sources_cleaned = sources
+    # If answer contains "I don't know", return empty sources
+    if OUT_OF_CONTEXT_RESPONSE in answer:
+        sources_cleaned = []
+    else:
+        if collection_name == "alltius_rag_chunks_insurance":
+            sources_cleaned = [
+                f"/file/{urllib.parse.quote(source)}?bucket={urllib.parse.quote(bucket)}"
+                for source in sources
+            ]
+        if collection_name == "alltius_rag_chunks_angelone":
+            sources_cleaned = sources
 
     result = {
         "answer": answer,

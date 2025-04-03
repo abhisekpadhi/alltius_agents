@@ -23,6 +23,7 @@ config = {
 COLLECTION_NAME_INSURANCE = "alltius_rag_chunks_insurance"
 COLLECTION_NAME_ANGELONE = "alltius_rag_chunks_angelone"
 VOYAGE_MODEL = "voyage-3"
+OUT_OF_CONTEXT_RESPONSE = "I don't know"
 
 # Initialize once
 qdrant = QdrantClient(

@@ -16,10 +16,35 @@
       "https://www.angelone.in/support/add-and-withdraw-funds/add-funds"
     ]
   },
-  "alltius_rag_chunks_insurance: had a surgery last year, which plan am I eligible for?": {
+  "alltius_rag_chunks_insurance:had a surgery last year, which plan am I eligible for?": {
     "answer": "Based on the provided context, if you had a surgery last year, you will not be eligible for any of the America\u2019s Choice Plans, which include:\n\n- America\u2019s Choice 2500 Gold\n- America\u2019s Choice 5000 HSA\n- America\u2019s Choice 250\n- America\u2019s Choice 500\n- America\u2019s Choice 7350 Copper\n- America\u2019s Choice 5000 Bronze\n- BCBS 1500\n- BCBS 2500\n- BCBS 5000\n- BCBS 7350\n- PMS Gigcare 1500\n- PMS Gigcare 2500\n- PMS Gigcare 5000\n- PMS Gigcare 7350\n- PMS Gigcare 5000 HSA\n\nYou would need to look for alternative health insurance plans that do not have these specific restrictions.",
     "sources": [
       "/file/America%27s_Choice_Medical_Questions_-_Modified_%283%29%20%281%29.pdf?bucket=Insurance%20PDFs"
     ]
+  },
+  "alltius_rag_chunks_angelone:can i use algo for trading?": {
+    "answer": "Yes, you can use algorithmic trading (also known as algo trading) for trading. The document mentions that with ARQ Prime, a rule-based investment engine, you can trade or invest anywhere, anytime using their app or web platforms. This suggests that the platform supports algorithmic trading.",
+    "sources": [
+      "https://www.angelone.in/support/add-and-withdraw-funds/withdraw-funds",
+      "https://www.angelone.in/support/add-and-withdraw-funds/quarterly-settlement-sebi-payout"
+    ]
+  },
+  "alltius_rag_chunks_angelone:is it better than zerodha ?": {
+    "answer": "The document provided does not contain specific comparative information between Angel One and Zerodha. Both are prominent brokerage firms in India, and the choice between them would depend on individual preferences and requirements. Factors to consider might include brokerage charges, trading platforms, customer service, additional features like investment tools, and user reviews. It would be beneficial to compare these aspects directly on their respective websites or through user reviews to determine which one better suits your needs.",
+    "sources": [
+      "https://www.angelone.in/support/add-and-withdraw-funds/withdraw-funds",
+      "https://www.angelone.in/support/add-and-withdraw-funds/quarterly-settlement-sebi-payout"
+    ]
+  },
+  "alltius_rag_chunks_angelone:is it better than icici security ?": {
+    "answer": "I don't know",
+    "sources": [
+      "https://www.angelone.in/support/add-and-withdraw-funds/withdraw-funds",
+      "https://www.angelone.in/support/add-and-withdraw-funds/quarterly-settlement-sebi-payout"
+    ]
+  },
+  "alltius_rag_chunks_angelone:is it better than dhan app ?": {
+    "answer": "I don't know",
+    "sources": []
   }
 }
