@@ -46,5 +46,9 @@
   "alltius_rag_chunks_angelone:is it better than dhan app ?": {
     "answer": "I don't know",
     "sources": []
+  },
+  "alltius_rag_chunks_angelone:is it better than icici?": {
+    "answer": "I don't know",
+    "sources": []
   }
 }
