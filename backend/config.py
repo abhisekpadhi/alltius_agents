@@ -9,6 +9,14 @@ import os
 # Load variables from .env file
 load_dotenv()
 
+COLLECTION_NAME_INSURANCE = "alltius_rag_chunks_insurance"
+COLLECTION_NAME_ANGELONE = "alltius_rag_chunks_angelone"
+VOYAGE_MODEL = "voyage-3"
+OUT_OF_CONTEXT_RESPONSE = "I don't know"
+TOP_K = 3    
+MIN_RESULTS = 1
+LOG_FILE = "chat_history.log"
+
 # Access your keys
 config = {
     "openai_api_key": os.getenv("OPENAI_AZURE_API_KEY"),
@@ -19,11 +27,6 @@ config = {
     "qdrant_url": os.getenv("QDRANT_URL"),
     "qdrant_api_key": os.getenv("QDRANT_API_KEY")
 }
-
-COLLECTION_NAME_INSURANCE = "alltius_rag_chunks_insurance"
-COLLECTION_NAME_ANGELONE = "alltius_rag_chunks_angelone"
-VOYAGE_MODEL = "voyage-3"
-OUT_OF_CONTEXT_RESPONSE = "I don't know"
 
 # Initialize once
 qdrant = QdrantClient(

@@ -46,11 +46,11 @@ if __name__ == "__main__":
     skip_urls = [
         "https://www.angelone.in/support/add-and-withdraw-funds/add-funds"
     ]
-    with open("../resources/angelone/urls.txt", "r") as f:
-        for line in f:
-            if line.strip() in skip_urls:
-                continue
-            # ingest_webpage(
-            #     line.strip(),
-            #     COLLECTION_NAME_ANGELONE
-            # )
+    # with open("../resources/angelone/urls.txt", "r") as f:
+    #     for line in f:
+    #         if line.strip() in skip_urls:
+    #             continue
+    #         ingest_webpage(
+    #             line.strip(),
+    #             COLLECTION_NAME_ANGELONE
+    #         )

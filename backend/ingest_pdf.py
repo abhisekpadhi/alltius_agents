@@ -78,8 +78,8 @@ if __name__ == "__main__":
         # "/Users/abhisekp/personal/interviews/alltius/resources/Insurance PDFs/America's_Choice_7350_Copper_SOB (1) (1).pdf",
         # "/Users/abhisekp/personal/interviews/alltius/resources/Insurance PDFs/America's_Choice_Medical_Questions_-_Modified_(3) (1).pdf"
     ]
-    for file in files:
-        # ingest_pdf(
-        #     file, 
-        #     COLLECTION_NAME_INSURANCE
-        # ) 
+    # for file in files:
+    #     ingest_pdf(
+    #         file, 
+    #         COLLECTION_NAME_INSURANCE
+    #     ) 
