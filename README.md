@@ -5,10 +5,29 @@
   - Insurance: insurance policy documents from pdf files &
   - Stock broker: support documents from URL
 
+## Constraints
+
+- Due to cost and time constraints, it's trained on limited resources
+- Angelone
+  - https://www.angelone.in/support/add-and-withdraw-funds/add-funds
+  - https://www.angelone.in/support/add-and-withdraw-funds/quarterly-settlement-sebi-payout
+  - https://www.angelone.in/support/add-and-withdraw-funds/withdraw-funds
+- Insurance
+  - America's_Choice_2500_Gold_SOB (1) (1).pdf
+  - America's*Choice_Medical_Questions*-_Modified_(3) (1).pdf
+
 ## Features
 
 - It has 2 different collections for data isolation by vendor.
 - It support pdf ingestion & web url ingestion.
+
+## Choice of solution
+
+- PDF ingestion - pdfplumber
+  ![pdf](docs/pdf.png)
+
+- Embedding model - voyageai-voyage3
+  ![pdf](docs/embedd.png)
 
 ## Architecture
 
