@@ -10,12 +10,59 @@
 - It has 2 different collections for data isolation by vendor.
 - It support pdf ingestion & web url ingestion.
 
+## Architecture
+
+### Current
+
+- Green boxes: LLM agent
+- White boxes: app-layer
+
+### Choice of models
+
+- Embedding
+
+![Architecture](docs/1.png)
+
+- Currently we have a proof of concept system
+- User query is sent to backend API router,
+
+  - it tries to recall if we have seen the question before, if recalled, answer is returned instantly
+  - if no recall, it's a new question so we retrive it from vector DB
+
+- The system caches query, answer & sources in recall to control cost
+
+- Caveats:
+  - Similar questions but with different wording can cause no recall, which is costly
+  - The system is not able to ask clarifying questions to the user
+  - There is no governance layer
+
+### Future - scalable
+
+![Architecture](docs/2.png)
+
+- To scale the system, we need to implement multiple agents
+- To solve no recall for similar questions, we create a QnA bank at the time of ingest
+- To solve for asking clarifying questions, slot filler agent will ask questions to gather required information
+- There can be a router agent that decides which agents to pass the query to, it could be another RAG chain or agent that can call other internal API's
+- To solve for governance, access control layer is implemented
+
+### Resource ingestion
+
+![Architecture|320x240](docs/3.png)
+
+- When ingesting the resource, we maintain data isolation per tenant by collections
+- We store both the embeddings and source together
+- The ingest pipeline also generates QnA bank for quick anwersing of frequently asked questions
+
 ## Tech stack
 
 - Backend: Python, Flask
-- VectorDB: Qdrant
-- Retrival: VoyageAI
 - Frontend: NextJS
+- LLM
+  - VectorDB: Qdrant
+  - Embedding model: VoyageAI
+  - Answer model: gpt4o (final answer from context)
+  - Enriching model: gpt4o-mini (slot filler, routers, knowledgebase generation, question generation)
 
 ## How to run
 
@@ -100,6 +147,7 @@ curl --location 'http://localhost:5050/api/v1/rag/health'
 ```
 
 **Response - success**
+
 ```json
 {
   "status": "healthy",
@@ -108,18 +156,16 @@ curl --location 'http://localhost:5050/api/v1/rag/health'
 ```
 
 - Error response - common to all API's
+
 ```json
 {
-  "error": 
-  "Invalid collection"
+  "error": "Invalid collection"
 }
 ```
 
 ## Optimisations
 
-### Reduce hallucinations
-
-#### Also check semantic distance / relevance score
+### Reduce hallucinations - check semantic distance / relevance score
 
 - We can access the distance score from Qdrant and set a cutoff:
 
@@ -142,3 +188,9 @@ if all(h.score < 0.6 for h in hits):  # adjust threshold
 - We can pass `AccessContext` from the API routes down to the service layer
 - `AccessContext`: `{user_id, tenant_id, collection_id}`
 - There will be an access control layer that decides given an `AccessContext` and `sources`, it it allowed or not
+
+### Tracing, caching & feedback - Langfuse
+
+- Currently in this project there is no tracing thus we cannot record feedback & score the output
+- Prompt caching is not available, this is required to control cost
+- We can use langfuse to implement these in future
