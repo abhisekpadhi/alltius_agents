@@ -1,3 +1,9 @@
+## Demo
+
+https://www.youtube.com/watch?v=hKaMwaERwNQ
+
+[![Demo Video](https://img.youtube.com/vi/hKaMwaERwNQ/0.jpg)](https://www.youtube.com/watch?v=hKaMwaERwNQ)
+
 # Alltius RAG agent
 
 - This is a RAG agent that can answer user queries from support documentations.
@@ -75,8 +81,8 @@
 
 ## Tech stack
 
-- Backend: Python, Flask
-- Frontend: NextJS
+- Backend: Python, Flask - on AWS
+- Frontend: NextJS - on Vercel
 - LLM
   - VectorDB: Qdrant
   - Embedding model: VoyageAI
