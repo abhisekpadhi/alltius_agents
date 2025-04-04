@@ -194,3 +194,8 @@ if all(h.score < 0.6 for h in hits):  # adjust threshold
 - Currently in this project there is no tracing thus we cannot record feedback & score the output
 - Prompt caching is not available, this is required to control cost
 - We can use langfuse to implement these in future
+
+### User perceived latency - Streaming
+
+- Currently in this project we are not using streaming from models
+- We can stream from models and stream the response to frontend usig SSE (server-sent-event) in future so the response delay from the chatbot seems less
